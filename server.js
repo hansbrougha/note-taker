@@ -11,8 +11,8 @@ app.use(express.json());
 app.use(express.static("public"));
 
 //Router
-require("./public/apiRoutes")(app);
-require("./public/htmlRoutes")(app);
+require("./routes/apiRoutes")(app);
+require("./routes/htmlRoutes")(app);
 
 //Listening on localhost:2020
 app.listen(PORT, () => {
