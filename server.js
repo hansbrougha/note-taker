@@ -14,7 +14,7 @@ app.use(express.static("public"));
 const apiRoutes = require("./routes/apiRoutes")(app);
 const htmlRoutes = require("./routes/htmlRoutes")(app);
 
-//Listening on localhost:2020
+//Listening on localhost:8080
 app.listen(PORT, () => {
   console.log("listening on localhost:" + PORT);
 });

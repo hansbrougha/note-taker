@@ -1,12 +1,12 @@
 {
   "name": "note-taker",
   "version": "1.0.0",
-  "description": "",
+  "description": "Note-Taker",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server.js"
   },
-  "author": "",
+  "author": "Andrew Hansbrough",
   "license": "ISC",
   "dependencies": {
     "express": "^4.16.4",
