@@ -7,14 +7,6 @@ const $noteList = $(".list-container .list-group"); //notes.html Line 26 and 28
 // activeNote is used to keep track of the note in the textarea
 const activeNote = {};
 
-// A function for getting all notes from the db
-const getNotes = function () {
-  return $.ajax({
-    url: "/api/notes",
-    method: "GET"
-  });
-};
-
 // A function for saving a note to the db
 const saveNote = function (note) {
   return $.ajax({
@@ -26,6 +18,7 @@ const saveNote = function (note) {
 
 // A function for deleting a note from the db
 const deleteNote = function (id) {
+  console.log("hit");
   return $.ajax({
     url: "api/notes/" + id,
     method: "DELETE"
@@ -107,7 +100,7 @@ const renderNoteList = function (notes) {
 
   const noteListItems = [];
 
-  for (const i = 0; i < notes.length; i++) {
+  for (let i = 0; i < notes.length; i++) {
     const note = notes[i];
 
     const $li = $("<li class='list-group-item'>").data(note);
@@ -124,9 +117,12 @@ const renderNoteList = function (notes) {
 };
 
 // Gets notes from the db and renders them to the sidebar
-const getAndRenderNotes = function () {
-  return getNotes().then(function (data) {
-    renderNoteList(data);
+const getAndRenderNotes = async () => {
+  await $.ajax({
+    url: "/api/notes",
+    method: "GET"
+  }).then((result) => {
+    renderNoteList(result);
   });
 };
 
