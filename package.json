@@ -9,7 +9,7 @@
   "author": "Andrew Hansbrough",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.16.4",
+    "express": "^4.18.2",
     "path": "^0.12.7",
     "router": "^1.3.5",
     "uuid": "^8.1.0"
